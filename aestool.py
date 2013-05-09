@@ -2,7 +2,7 @@ import os, random, struct, hashlib
 from Crypto.Cipher import AES
 
 def get_key(password):
-	return hashlib.sha256(password).digest()
+	return hashlib.sha256(password.encode('utf-8')).digest()
 
 def encrypt_file(key, in_filename, out_filename=None, chunksize=64*1024):
 	""" Encrypts a file using AES (CBC mode) with the

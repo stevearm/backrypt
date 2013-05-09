@@ -22,7 +22,7 @@ class Index():
 		
 		self.mod_time = os.stat(filename).st_mtime
 		
-		file = open(filename, 'rb')
+		file = open(filename, 'r')
 		try:
 			line = file.readline()
 			if (line != 'md5s\n'):

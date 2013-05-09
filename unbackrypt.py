@@ -60,4 +60,7 @@ for file, md5 in index.path_to_md5.items():
 	print("Copied out %s" % file)
 
 # Cleanup
-shutil.rmtree(temp_dir)
+try:
+	shutil.rmtree(temp_dir)
+except:
+	print("Error deleting temp dir %s" % temp_dir)
